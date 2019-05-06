@@ -207,11 +207,11 @@ public class GameController {
         int point = 0;
         //Opdiagonal checking
         // there still miss calculate for this method in 3x3, in order to keep game moving in 3x3 frame, in need to do this
-        if (rows == 3 && cols == 3){
-            return (boardGame.getCellContent(2,0) == theSeed) && (boardGame.getCellContent(1,1) == theSeed) &&
-                    (boardGame.getCellContent(0,2) == theSeed);
-        }
-        for (int i = rows-1; i>=(rows-point_to_win)+1 ; i--){
+//        if (rows == 3 && cols == 3){
+//            return (boardGame.getCellContent(2,0) == theSeed) && (boardGame.getCellContent(1,1) == theSeed) &&
+//                    (boardGame.getCellContent(0,2) == theSeed);
+//        }
+        for (int i = rows-1; i>=rows-(rows-point_to_win)-1 ; i--){
             for (int j = 0; j<(cols-point_to_win)+1 ; j++) {
                 for (int k = 0; k < point_to_win ; k++) {
                     if(boardGame.getCellContent(i-k,j+k)==theSeed)point++;
@@ -284,7 +284,7 @@ public class GameController {
         int point = 0;
         int score = 0;
         //Opdiagonal checking
-        for (int i = rows-1; i>=(rows-point_to_win)+1 ; i--){
+        for (int i = rows-1; i>=rows-(rows-point_to_win)-1 ; i--){
             for (int j = 0; j<(cols-point_to_win)+1 ; j++) {
                 for (int k = 0; k < point_to_win ; k++) {
                     if(boardGame.getCellContent(i-k,j+k)==theSeed)point++;
